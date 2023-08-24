@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Coin.css";
 
-export default function Coin({ coin, id }) {
+export default function Coin({ coin, id, filteredList }) {
   const [num, setNum] = useState(id + 1);
   const {
     name,
@@ -18,7 +18,7 @@ export default function Coin({ coin, id }) {
       <div className="coins">
         <div className="coin-info">
           <h4>{num}</h4>
-          <div className="coin-image">
+          <div className="coin-img">
             <img src={image} alt={name} />
           </div>
           <div className="coin-name">
@@ -29,13 +29,13 @@ export default function Coin({ coin, id }) {
           </div>
         </div>
         <div className="coin-details">
-          <div className="price">{current_price}</div>
-          <div className="price-change">{price_change_percentage_24h}</div>
-          <div className="market-cap">{market_cap}</div>
-          <div className="market-cap-change">
+          <div className="det price">${current_price}</div>
+          <div className="det price-change">{price_change_percentage_24h}</div>
+          <div className="det market-cap">${market_cap}</div>
+          <div className="det market-cap-change">
             {market_cap_change_percentage_24h}
           </div>
-          <div className="vol">{total_volume}</div>
+          <div className="vol">${total_volume}</div>
         </div>
       </div>
     </>

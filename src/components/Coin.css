@@ -4,3 +4,35 @@
     border-bottom: 1px solid grey;
     padding: 10px 0;
   }
+  .coin-info{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+   .coin-details{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+    font-size: 1rem;
+  }
+  .coin-details .price{
+    font-size: 600;
+  }
+  .coin-img img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  .coin-symbol span {
+    text-transform: uppercase;
+    color: var(--color-surface-400);
+  }
+  .coin-name h1{
+    font-size: 1.2rem;
+    margin-right: 12px;
+  }
+  .coin-info h4{
+    margin-right: 20px;
+  }
