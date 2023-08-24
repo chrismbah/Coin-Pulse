@@ -29,7 +29,9 @@ export default function Coin({ coin, id, filteredList }) {
           </div>
         </div>
         <div className="coin-details">
-          <div className="det price">${current_price}</div>
+          <div className="det price">
+            <span>${current_price}</span>
+          </div>
           <div className="det price-change">{price_change_percentage_24h}</div>
           <div className="det market-cap">${market_cap}</div>
           <div className="det market-cap-change">
@@ -38,6 +40,7 @@ export default function Coin({ coin, id, filteredList }) {
           <div className="vol">${total_volume}</div>
         </div>
       </div>
+      {filteredList === [] && <div>Oops Coin Not Available</div>}
     </>
   );
 }
