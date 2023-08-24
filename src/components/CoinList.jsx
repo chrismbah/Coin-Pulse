@@ -4,7 +4,7 @@ import Coin from "./Coin";
 
 export default function CoinList() {
   const [coinList, setCoinList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchWord, setSearchWord] = useState("");
 
@@ -18,11 +18,11 @@ export default function CoinList() {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
       );
       setCoinList(coins.data);
-      setLoading(false);
+      setIsLoading(false);
       console.log(coins.data);
     } catch (error) {
-      setError(error);
-      setLoading(false);
+      setError("Network Error ");
+      setIsLoading(false);
     }
   }
   useEffect(() => {
@@ -55,19 +55,30 @@ export default function CoinList() {
             <div className="det vol">Total Volume ($)</div>
           </div>
         </div>
-        {filteredCoinList.map((coin, index) => {
-          return (
-            <Coin
-              key={coin.id}
-              coin={coin}
-              id={index}
-              filteredList={filteredCoinList}
-            />
-          );
-        })}
-        {error && <div>{error}</div>}
-        {loading && <div>Loading</div>}
-        {filteredCoinList === [] && <div>Oops Coin Not Available</div>}
+        <div>
+          {isLoading ? (
+            <div class="spinner"></div>
+          ) : (
+            <>
+              {error ? (
+                <div>Error:{error}</div>
+              ) : (
+                <>
+                  {filteredCoinList.map((coin, index) => {
+                    return (
+                      <Coin
+                        key={coin.id}
+                        coin={coin}
+                        id={index}
+                        filteredList={filteredCoinList}
+                      />
+                    );
+                  })}
+                </>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </>
   );
