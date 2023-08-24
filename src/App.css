@@ -7,12 +7,13 @@
     --color-surface-100: #121212;
     --color-surface-200: #282828;
     --color-surface-300: #3f3f3f;
+    --color-surface-400: #555555;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins",sans-serif;
+    font-family: "Bricolage Grotesque",sans-serif;
     background-color:var(--color-surface-100) ;
     color: var(--color-primary-300);
     
@@ -27,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1% 0;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 .header-title{
     display: flex;
@@ -39,7 +40,7 @@
 }
 .header-title h2{
    color: #f2a900;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     letter-spacing: .2rem;
 }
 .curr select{
@@ -72,6 +73,7 @@
   }
   .search{
     position: relative;
+    margin-bottom: 10px;
   }
   
   .search-bar:focus {
@@ -95,19 +97,21 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid grey;
-    padding: 8px 0;
+    padding: 20px 0;
 
   }
   .coin-header .coin-no{
-    width: 20%;
+    width: 25%;
   }
   .coin-header .details{
-    width: 80%;
+    width: 75%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
   }
- 
+ .det{
+  width: 20%;
+ }
   
   
   
