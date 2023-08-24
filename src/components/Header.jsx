@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { CoinApp } from "../App";
-import logo from "../../public/logo/logo.svg";
+import logo from "../assets/logo.svg";
 
 export default function Header() {
   const { selectedCurrency, handleCurrencyChange } = useContext(CoinApp);
