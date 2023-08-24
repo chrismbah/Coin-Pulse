@@ -1,14 +1,21 @@
 .coins{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--color-surface-600);
     padding: 10px 0;
+    cursor: pointer;
+  }
+  .coins:hover{
+    background: var(--color-surface-500);
+    transition: .07s ease;
+  
   }
   .coin-info{
     width: 25%;
     display: flex;
     align-items: center;
     justify-content: start;
+    padding-left:5px;
   }
    .coin-details{
     width: 75%;
@@ -18,11 +25,9 @@
     text-align: left;
     font-size: 1rem;
   }
-  .coin-details .price{
-    font-size: 600;
-  }
+ 
   .coin-img img {
-    width: 30px;
+    width: 26px;
     margin-right: 10px;
   }
   .coin-symbol span {
