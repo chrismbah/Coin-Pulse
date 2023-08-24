@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import CoinList from "./components/CoinList";
+import CoinInfo from "./components/CoinInfo";
 import "./App.css";
 import { createContext } from "react";
 
@@ -23,6 +24,7 @@ export default function App() {
           <Header />
           <Routes>
             <Route path="/" element={<CoinList />} />
+            <Route path="/info/:coin" element={<CoinInfo />} />
           </Routes>
         </Router>
       </div>
