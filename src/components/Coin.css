@@ -41,3 +41,8 @@
   .coin-info h4{
     margin-right: 20px;
   }
+  a{
+    text-decoration:none;
+    color:var(--color-primary-100);
+  
+  }
