@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import "./Coin.css";
 import { CoinApp } from "../App";
 
-export default function Coin({ coin, id }) {
-  const [num, setNum] = useState(id + 1);
+export default function Coin({ coin, no }) {
+  const [num, setNum] = useState(no + 1);
   const {
+    id,
     name,
     symbol,
     image,
@@ -18,7 +19,7 @@ export default function Coin({ coin, id }) {
   const { currSymbol } = useContext(CoinApp);
   return (
     <>
-      <Link to={`/info/${name.toLowerCase()}`}>
+      <Link to={`/info/${id}`}>
         <div className="coins">
           <div className="coin-info">
             <h4>{num}</h4>
