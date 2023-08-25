@@ -80,14 +80,7 @@ export default function CoinList() {
               ) : (
                 <>
                   {filteredCoinList.map((coin, index) => {
-                    return (
-                      <Coin
-                        key={coin.id}
-                        coin={coin}
-                        no={index}
-                        filteredList={filteredCoinList}
-                      />
-                    );
+                    return <Coin key={coin.id} coin={coin} no={index} />;
                   })}
                 </>
               )}
