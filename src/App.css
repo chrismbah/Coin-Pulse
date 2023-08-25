@@ -47,22 +47,36 @@ body{
     font-size: 2.3rem;
     letter-spacing: .2rem;
 }
-.curr select{
+ select{
     width: 80px;
     border-radius: 5px;
+    border: 1px solid #f2a900;
     height: 30px;
-    padding: 0 4px;
+    padding: 3px 6px;
     outline: none;
     font-size: .9rem;
+    background:var(--color-surface-100) ;
+    color: var(--color-primary-300);
 }
-.curr select option:checked{
+/* .curr select option:checked{
     background: #f2a900;
-}
-.curr option:hover{
+} */
+/* .curr select option:hover{
     color: pink;
     background-color: #f2a900;
 
+} */
+option{
+  transition: .3s ease-in;
+  background-color: var(--color-surface-100);
+  color: var(--color-primary-300);
 }
+option:checked{
+  /* background-color: var(--color-surface-400); */
+  background-color: #f2a900;
+  color: var(--color-primary-300);
+}
+
 .search-bar {
     width: 100%;
     padding: 9px;
