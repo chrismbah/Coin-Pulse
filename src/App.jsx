@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Axios from "axios";
 import Header from "./components/Header";
 import CoinList from "./components/CoinList";
-import CoinInfo from "./components/CoinInfo";
+import CoinInfo from "./components/CoinInfo/CoinInfo";
 import "./App.css";
 import { createContext } from "react";
 
@@ -36,18 +36,6 @@ export default function App() {
       setIsLoading(false);
     }
   }
-
-  // async function getCoinInfo() {
-  //   try {
-  //     const info = await Axios.get(
-  //       `https://api.coingecko.com/api/v3/coins/bitcoin`
-  //     );
-  //     setCoinInfo(info.data);
-  //     console.log(coinInfo);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
 
   return (
     <CoinApp.Provider
