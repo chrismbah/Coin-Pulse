@@ -1,0 +1,40 @@
+.info-body{
+    width:85% ;
+    margin: 20px auto;
+    background: red;  
+}
+.info-name{
+    background: var(--color-surface-100);
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+ .info-name h3{
+    text-align: center;
+    font-size: 1.9rem;
+    letter-spacing: .2rem;
+}
+.info-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    position: relative;
+}
+.info-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rank{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.info-1 img{
+    width:25px;
+}
+.info-1 .symbol{
+    text-transform: uppercase;
+    font-size: .8rem;
+}
