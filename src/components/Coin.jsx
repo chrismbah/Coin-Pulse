@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Coin.css";
+import { CoinApp } from "../App";
 
-export default function Coin({ coin, id, filteredList }) {
+export default function Coin({ coin, id }) {
   const [num, setNum] = useState(id + 1);
   const {
     name,
@@ -14,6 +15,7 @@ export default function Coin({ coin, id, filteredList }) {
     price_change_percentage_24h,
     market_cap_change_percentage_24h,
   } = coin;
+  const { currSymbol } = useContext(CoinApp);
   return (
     <>
       <Link to={`/info/${name.toLowerCase()}`}>
@@ -32,16 +34,42 @@ export default function Coin({ coin, id, filteredList }) {
           </div>
           <div className="coin-details">
             <div className="det price">
-              <span>${current_price}</span>
+              <span>
+                {currSymbol} {current_price.toLocaleString()}
+              </span>
             </div>
-            <div className="det price-change">
-              {price_change_percentage_24h}
+            <div
+              className={`det price-change ${
+                price_change_percentage_24h < 0 ? "red" : "green"
+              }`}
+            >
+              {price_change_percentage_24h}{" "}
+              <i
+                class={`ri-arrow-right-${
+                  price_change_percentage_24h > 0 ? "up" : "down"
+                }-line`}
+              ></i>{" "}
             </div>
-            <div className="det market-cap">${market_cap}</div>
-            <div className="det market-cap-change">
-              {market_cap_change_percentage_24h}
+            <div className="det market-cap">
+              {" "}
+              {currSymbol} {market_cap.toLocaleString()}
             </div>
-            <div className="vol">${total_volume}</div>
+            <div
+              className={`det market-cap-change ${
+                market_cap_change_percentage_24h < 0 ? "red" : "green"
+              }`}
+            >
+              {market_cap_change_percentage_24h}{" "}
+              <i
+                class={`ri-arrow-right-${
+                  market_cap_change_percentage_24h > 0 ? "up" : "down"
+                }-line`}
+              ></i>{" "}
+            </div>
+            <div className="vol">
+              {" "}
+              {currSymbol} {total_volume.toLocaleString()}
+            </div>
           </div>
         </div>
       </Link>
