@@ -12,6 +12,9 @@
     --color-surface-400: #5e5e5e;
     --color-surface-500: #33333383;
     --color-surface-600: #333333cb;
+
+    --box-shadow-1:rgba(0, 0, 0, 0.356) 0px 4px 12px;
+    --box-shadow-2: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 *{
     margin: 0;
