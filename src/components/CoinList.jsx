@@ -13,28 +13,7 @@ export default function CoinList() {
     setSearchWord,
     getListOfCoins,
     currSymbol,
-    setCurrSymbol,
   } = useContext(CoinApp);
-
-  switch (selectedCurrency) {
-    case "usd":
-      setCurrSymbol("$");
-      break;
-    case "jpy":
-      setCurrSymbol("¥");
-      break;
-    case "eur":
-      setCurrSymbol("€");
-      break;
-    case "ngn":
-      setCurrSymbol("₦");
-      break;
-    case "inr":
-      setCurrSymbol("₹");
-      break;
-    default:
-      setCurrSymbol("");
-  }
 
   const filteredCoinList = coinList.filter((coins) =>
     coins.name.toLowerCase().includes(searchWord.toLowerCase())

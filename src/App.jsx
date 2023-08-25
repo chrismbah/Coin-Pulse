@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Axios from "axios";
@@ -16,13 +16,36 @@ export default function App() {
   const [error, setError] = useState(null);
   const [searchWord, setSearchWord] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
-  const [currSymbol, setCurrSymbol] = useState("");
+  const [currSymbol, setCurrSymbol] = useState("$");
   const [coinInfo, setCoinInfo] = useState([]);
 
   const handleCurrencyChange = (event) => {
     setSelectedCurrency(event.target.value);
     getListOfCoins(selectedCurrency);
   };
+
+  useEffect(() => {
+    switch (selectedCurrency) {
+      case "usd":
+        setCurrSymbol("$");
+        break;
+      case "jpy":
+        setCurrSymbol("¥");
+        break;
+      case "eur":
+        setCurrSymbol("€");
+        break;
+      case "ngn":
+        setCurrSymbol("₦");
+        break;
+      case "inr":
+        setCurrSymbol("₹");
+        break;
+      default:
+        setCurrSymbol("");
+    }
+  }, [selectedCurrency]);
+
   async function getListOfCoins(selectedCurrency) {
     try {
       const coins = await Axios.get(

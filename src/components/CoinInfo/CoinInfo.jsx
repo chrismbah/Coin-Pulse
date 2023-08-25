@@ -7,7 +7,8 @@ import "./CoinInfo.css";
 
 export default function CoinInfo() {
   const { coinId } = useParams();
-  const { coinInfo, setCoinInfo, selectedCurrency } = useContext(CoinApp);
+  const { coinInfo, setCoinInfo, selectedCurrency, currSymbol } =
+    useContext(CoinApp);
   const [infoLoading, setInfoLoading] = useState(true);
 
   async function getCoinInfo(coinID) {
@@ -43,23 +44,27 @@ export default function CoinInfo() {
               <div className="info-img">
                 <img src={coinInfo?.image?.small} alt={coinInfo.name} />
               </div>
+              <h3>{name}</h3>
               <div className="symbol">{symbol}</div>
-              <h2>{name}</h2>
             </div>
             <div className="info-price">
               <h2>
-                $
+                {currSymbol}
                 {coinInfo.market_data?.current_price[
                   selectedCurrency
                 ].toLocaleString()}
               </h2>
             </div>
-            <div className="rank">{market_cap_rank}</div>
+            <div className="rank">Rank: {market_cap_rank}</div>
           </div>
           <div>
-            ${coinInfo.market_data?.high_24h[selectedCurrency]}High 24hr
+            {currSymbol}
+            {coinInfo.market_data?.high_24h[selectedCurrency]}High 24hr
           </div>
-          <div>${coinInfo.market_data?.low_24h[selectedCurrency]} Low 24h</div>
+          <div>
+            {currSymbol}
+            {coinInfo.market_data?.low_24h[selectedCurrency]} Low 24h
+          </div>
           <div>
             %
             {
@@ -106,7 +111,8 @@ export default function CoinInfo() {
             30d Price change
           </div>
           <div>
-            ${coinInfo.market_data?.market_cap[selectedCurrency]} Market Cap
+            {currSymbol}
+            {coinInfo.market_data?.market_cap[selectedCurrency]} Market Cap
           </div>
           <div>
             %
@@ -118,7 +124,8 @@ export default function CoinInfo() {
             Market cap change 24hr
           </div>
           <div>
-            ${coinInfo.market_data?.total_volume[selectedCurrency]} Total Volume
+            {currSymbol}
+            {coinInfo.market_data?.total_volume[selectedCurrency]} Total Volume
           </div>
         </div>
       )}
