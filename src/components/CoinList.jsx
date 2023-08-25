@@ -1,33 +1,48 @@
-import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import React, { useEffect } from "react";
 import Coin from "./Coin";
+import { useContext } from "react";
+import { CoinApp } from "../App";
 
 export default function CoinList() {
-  const [coinList, setCoinList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [searchWord, setSearchWord] = useState("");
+  const {
+    selectedCurrency,
+    coinList,
+    isLoading,
+    error,
+    searchWord,
+    setSearchWord,
+    getListOfCoins,
+    currSymbol,
+    setCurrSymbol,
+  } = useContext(CoinApp);
+
+  switch (selectedCurrency) {
+    case "usd":
+      setCurrSymbol("$");
+      break;
+    case "jpy":
+      setCurrSymbol("¥");
+      break;
+    case "eur":
+      setCurrSymbol("€");
+      break;
+    case "ngn":
+      setCurrSymbol("₦");
+      break;
+    case "inr":
+      setCurrSymbol("₹");
+      break;
+    default:
+      setCurrSymbol("");
+  }
 
   const filteredCoinList = coinList.filter((coins) =>
     coins.name.toLowerCase().includes(searchWord.toLowerCase())
   );
 
-  async function getListOfCoins() {
-    try {
-      const coins = await Axios.get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
-      );
-      setCoinList(coins.data);
-      setIsLoading(false);
-      console.log(coins.data);
-    } catch (error) {
-      setError("Network Error ");
-      setIsLoading(false);
-    }
-  }
   useEffect(() => {
-    getListOfCoins();
-  }, []);
+    getListOfCoins(selectedCurrency);
+  }, [selectedCurrency]); //* Still up for future change to '[]'
 
   return (
     <>
@@ -48,11 +63,11 @@ export default function CoinList() {
         <div className="coin-header">
           <div className="coin-no">#</div>
           <div className="details">
-            <div className="det price">Price ($)</div>
+            <div className="det price">Price ({currSymbol})</div>
             <div className="det price-change">% 24Hr</div>
-            <div className="det market-cap">Market Cap ($)</div>
-            <div className="det market-cap-change">%24 Hr</div>
-            <div className="det vol">Total Volume ($)</div>
+            <div className="det market-cap">Market Cap ({currSymbol})</div>
+            <div className="det market-cap-change">% 24 Hr</div>
+            <div className="det vol">Total Volume ({currSymbol})</div>
           </div>
         </div>
         <div>
