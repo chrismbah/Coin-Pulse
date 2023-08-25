@@ -55,8 +55,79 @@ export default function CoinInfo() {
                 ].toLocaleString()}
               </h2>
             </div>
-            <div className="rank">Rank: {market_cap_rank}</div>
+            <div className="rank">
+              Rank: <span>{market_cap_rank}</span>
+            </div>
           </div>
+          <div className="info-history">
+            <div className="history">
+              <div className="period">1hr Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+            <div className="history">
+              <div className="period">24hr Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_24h_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+            <div className="history">
+              <div className="period">7d Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_7d_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+            <div className="history">
+              <div className="period">14d Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_14d_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+            <div className="history">
+              <div className="period">30d Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_30d_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+            <div className="history">
+              <div className="period">1yr Price change</div>
+              <div className="val">
+                {
+                  coinInfo.market_data?.price_change_percentage_1y_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %
+              </div>
+            </div>
+          </div>
+
           <div>
             {currSymbol}
             {coinInfo.market_data?.high_24h[selectedCurrency]}High 24hr
@@ -66,61 +137,15 @@ export default function CoinInfo() {
             {coinInfo.market_data?.low_24h[selectedCurrency]} Low 24h
           </div>
           <div>
-            %
-            {
-              coinInfo.market_data?.price_change_percentage_1h_in_currency[
-                selectedCurrency
-              ]
-            }{" "}
-            1hr Price change
-          </div>
-          <div>
-            %
-            {
-              coinInfo.market_data?.price_change_percentage_24h_in_currency[
-                selectedCurrency
-              ]
-            }{" "}
-            24hr Price Change
-          </div>
-          <div>
-            %
-            {
-              coinInfo.market_data?.price_change_percentage_7d_in_currency[
-                selectedCurrency
-              ]
-            }{" "}
-            7d Price change
-          </div>
-          <div>
-            %
-            {
-              coinInfo.market_data?.price_change_percentage_14d_in_currency[
-                selectedCurrency
-              ]
-            }{" "}
-            14d Price change
-          </div>
-          <div>
-            %
-            {
-              coinInfo.market_data?.price_change_percentage_30d_in_currency[
-                selectedCurrency
-              ]
-            }{" "}
-            30d Price change
-          </div>
-          <div>
             {currSymbol}
             {coinInfo.market_data?.market_cap[selectedCurrency]} Market Cap
           </div>
           <div>
-            %
             {
               coinInfo.market_data?.market_cap_change_24h_in_currency[
                 selectedCurrency
               ]
-            }{" "}
+            }
             Market cap change 24hr
           </div>
           <div>
