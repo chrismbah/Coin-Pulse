@@ -16,7 +16,9 @@ export default function Header() {
         <select value={selectedCurrency} onChange={handleCurrencyChange}>
           <option value="usd">USD</option>
           <option value="eur">EUR</option>
-          <option value="yen">YEN</option>
+          <option value="jpy">JPY</option>
+          <option value="ngn">NGN</option>
+          <option value="inr">INR</option>
         </select>
       </div>
     </div>
