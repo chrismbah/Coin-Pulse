@@ -76,7 +76,7 @@ export default function CoinList() {
           ) : (
             <>
               {error ? (
-                <div>Error:{error}</div>
+                <div className="error">{error}</div>
               ) : (
                 <>
                   {filteredCoinList.map((coin, index) => {
@@ -84,7 +84,7 @@ export default function CoinList() {
                       <Coin
                         key={coin.id}
                         coin={coin}
-                        id={index}
+                        no={index}
                         filteredList={filteredCoinList}
                       />
                     );
