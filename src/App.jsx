@@ -17,6 +17,7 @@ export default function App() {
   const [searchWord, setSearchWord] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState("usd");
   const [currSymbol, setCurrSymbol] = useState("");
+  const [coinInfo, setCoinInfo] = useState([]);
 
   const handleCurrencyChange = (event) => {
     setSelectedCurrency(event.target.value);
@@ -31,10 +32,22 @@ export default function App() {
       setIsLoading(false);
       console.log(coins.data);
     } catch (error) {
-      setError("Network Error ");
+      setError("Network Error: Please check your internet connection ");
       setIsLoading(false);
     }
   }
+
+  // async function getCoinInfo() {
+  //   try {
+  //     const info = await Axios.get(
+  //       `https://api.coingecko.com/api/v3/coins/bitcoin`
+  //     );
+  //     setCoinInfo(info.data);
+  //     console.log(coinInfo);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   return (
     <CoinApp.Provider
@@ -53,6 +66,9 @@ export default function App() {
         getListOfCoins,
         currSymbol,
         setCurrSymbol,
+        // getCoinInfo,
+        coinInfo,
+        setCoinInfo,
       }}
     >
       <div className="App">
@@ -60,7 +76,7 @@ export default function App() {
           <Header />
           <Routes>
             <Route path="/" element={<CoinList />} />
-            <Route path="/info/:coin" element={<CoinInfo />} />
+            <Route path="/info/:coinId" element={<CoinInfo />} />
           </Routes>
         </Router>
       </div>
