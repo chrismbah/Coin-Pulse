@@ -46,3 +46,9 @@
     color:var(--color-primary-100);
   
   }
+  .red{
+    color: red;
+  }
+.green{
+  color: green;
+}
