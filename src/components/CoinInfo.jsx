@@ -5,5 +5,5 @@ import { useParams } from "react-router-dom";
 export default function CoinInfo() {
   const { coin } = useParams();
 
-  return <div>CoinInfo</div>;
+  return <div>CoinInfo of {coin}</div>;
 }
