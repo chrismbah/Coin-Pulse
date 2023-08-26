@@ -90,7 +90,7 @@ option:checked{
 .search-bar {
     width: 100%;
     padding: 9px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--theme-primary);
     border-radius: 4px;
     font-size: 16px;
     background: var(--color-surface-100);
@@ -120,7 +120,7 @@ option:checked{
     right: 10px;
     cursor: pointer;
     font-size: 1.1rem;
-    color: #f2a900;
+    color: white;
   }
   .title{
     font-size: 1.4rem;
