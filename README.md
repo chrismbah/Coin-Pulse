@@ -46,7 +46,7 @@ _Caption: Cryptocurrency details page with historical price changes._
 
 The app utilizes the CoinGecko API to fetch real-time cryptocurrency data. Axios is used for making API requests.
 
-API Documentation: [CoinGecko API Documentation](https://https://www.coingecko.com/en/api/documentation)
+API Documentation: [CoinGecko API Documentation](https://www.coingecko.com/en/api/documentation)
 
 ## Live Demo
 
