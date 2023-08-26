@@ -226,6 +226,27 @@ color: rgb(20, 150, 20);
   }
 } 
  @media screen and (max-width:630px) {
+  .info-1 img{
+    width:30px;
+  }
+  .info-1 .symbol{
+    font-size: .7rem;
+    padding: 4px;
+    
+  }
+  .info-1 h3{
+    font-size: 1.8rem;
+  }
+  .info-price h2{
+    margin-right: 20px;
+    font-size: 1.5rem;
+  }
+  .rank{
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 1px;
+    color: var(--color-surface-100);
+  }
   .market-cap{
     display: none;
   }
@@ -253,9 +274,20 @@ color: rgb(20, 150, 20);
   .search-bar {
     padding: 7px;
   }
+  .info-1{
+    gap: 10px;
+    padding: 25px 8px 20px 8px;
+  }
  
 }
 @media screen and (max-width:455px) {
+  .info-name h3{
+    font-size: 2rem;
+  }
+  .info-details{
+    padding: 3px 5px;
+    margin-bottom: 15px;
+}
   .coins,.coin-header{
     grid-template-columns: 45% 30% 25%;
   }
@@ -295,4 +327,27 @@ color: rgb(20, 150, 20);
     padding: 5px;
     font-size: 13px;
   }
+}
+@media screen and (max-width:396px) {
+ .info-1 img{
+    width:22px;
+  }
+  .info-1 .symbol{
+    font-size: .6rem;
+    padding: 2px;
+    
+  }
+  .info-1 h3{
+    font-size: 1.6rem;
+  }
+  .info-price h2{
+    margin-right: 20px;
+    font-size: 1.1rem;
+  }
+   .rank{
+    font-size: .7rem;
+    letter-spacing: .7px;
+    padding: 1px;
+  }
+
 }
