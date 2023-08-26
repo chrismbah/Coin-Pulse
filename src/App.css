@@ -127,34 +127,7 @@ option:checked{
     text-align: center;
     margin-bottom: 2%;
   }
-  .coin-header{
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid grey;
-    padding: 15px 0;
-    margin-bottom: 5px;
 
-  }
-  .coin-header .coin-no{
-    width: 25%;
-  }
-  .coin-header .details{
-    width: 75%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-  }
- .det{
-  width: 20%;
- }
- .coin-header .coin-no{
-  font-weight: 400;
-  color: #f2a900;
- }
- .coin-no{
-  padding-left:5px;
-
- }
  .error{
   font-size: 1.3rem;
   color: #f2a900;
