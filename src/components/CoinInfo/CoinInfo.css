@@ -59,12 +59,11 @@
     font-size: 2rem;
 }
 .rank{
-    font-size: 1rem;
     text-transform: uppercase;
     background: var(--theme-primary);
     padding: 1px 4px;
     border-radius: 4px;
-    /* color: var(--color-surface-100); */
+    color: var(--color-surface-100);
 
 }
 
@@ -118,5 +117,7 @@
     padding: 5px ;
 }
 i{
-    vertical-align:baseline;
+    vertical-align:middle;
+    padding-left: 2px;
+    margin-bottom: 18px;
 }

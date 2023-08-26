@@ -77,7 +77,6 @@ export default function App() {
         getListOfCoins,
         currSymbol,
         setCurrSymbol,
-        // getCoinInfo,
         coinInfo,
         setCoinInfo,
       }}
