@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Coin from "./Coin";
+import Coin from "./Coin/Coin";
 import { useContext } from "react";
 import { CoinApp } from "../App";
 
