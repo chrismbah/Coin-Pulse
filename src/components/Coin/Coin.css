@@ -5,7 +5,7 @@
     border-bottom: 1px solid grey;
     padding: 10px 0;
 
-}
+  }
   .coin-header .coin-no{
     font-weight: 400;
     color: #f2a900;
@@ -52,75 +52,4 @@
   }
   .coin-n-s{
     display: flex;
-  }
-  @media screen and (max-width:1070px) {
-    .coin-n-s{
-     flex-direction: column;
-    }
-    .coins,.coin-header{
-      grid-template-columns: 24% 12% 11% 21% 11% 21%;
-    }
-  }
-  @media screen and (max-width:930px) {
-    .vol{
-      display: none;
-    }
-    .coins,.coin-header{
-      grid-template-columns: 25% 16% 14% 26% 20%;
-    }
-    .coin-name h1{
-      font-size: 1rem;
-      margin-right: 10px;
-    }
-    .coin-symbol span {
-      font-size: .8rem;
-    }
-  }
-  @media screen and (max-width:770px) {
-    .market-cap-change{
-      display: none;
-    }
-    .coins,.coin-header{
-      grid-template-columns: 27% 18% 15% 35%;
-    }
-  } 
-   @media screen and (max-width:630px) {
-    .market-cap{
-      display: none;
-    }
-    .coins,.coin-header{
-      grid-template-columns: 40% 30% 30%;
-      padding: 7px 0;
-    }
-    .coins .det{
-      padding-top:12px ;
-    }
-    .coin-info h4{
-      font-size: .8rem;
-      font-weight: 300;
-      color: #f2a900;
-    }
-  }
-  @media screen and (max-width:455px) {
-    .coins,.coin-header{
-      grid-template-columns: 45% 30% 25%;
-    }
-     .det{
-      font-size: .7rem;
-    }
-    .coin-img img {
-      width: 20px;
-      margin-right: 5px;
-
-    }
-    .coin-name h1{
-      font-size: .8rem;
-      margin-right: 9px;
-    }
-    .coin-info h4{
-      margin-right: 10px;
-    }
-    .coin-symbol span {
-      font-size: .7rem;
-    }
   }
