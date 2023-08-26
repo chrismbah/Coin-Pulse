@@ -12,9 +12,7 @@
   }
   .coin-no{
     padding-left:5px;
-
   }
-
   .coins:hover{
     background: var(--color-surface-500);
     transition: .07s ease;
