@@ -33,7 +33,7 @@ export default function CoinInfo() {
   return (
     <>
       {infoLoading ? (
-        <div class="spinner"></div>
+        <div class="spinner"></div> //*Loading animation while data fetches
       ) : (
         <div className="info-body">
           <div className="info-name">
@@ -50,27 +50,37 @@ export default function CoinInfo() {
             <div className="info-price">
               <h2>
                 {currSymbol}
-                {coinInfo.market_data?.current_price[
-                  selectedCurrency
-                ].toLocaleString()}
+                {coinInfo.market_data?.current_price[selectedCurrency] //*Convert int data to string
+                  .toLocaleString()}
               </h2>
               <span
                 className={`${
                   coinInfo.market_data?.price_change_percentage_1h_in_currency[
                     selectedCurrency
                   ].toFixed(2) > 0
-                    ? "green"
-                    : "red"
+                    ? "green" //*Price shows green when >0 indicating an increase
+                    : "red" //!Price shows red when < 0 indicating decrese
                 }`}
               >
-                {coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                {coinInfo.market_data?.price_change_percentage_1h_in_currency[ //*Rounds data to 2 decimal places
                   selectedCurrency
-                ].toFixed(2)}
-                {/* %<i class="ri-arrow-up-line"></i> */}
+                ]
+                  .toFixed(3)}
+                %
+                <i
+                  className={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.price_change_percentage_1h_in_currency?.[
+                      selectedCurrency
+                    ] > 0
+                      ? "up" //*Arrow icon goes up when price increase
+                      : "down" //!Arrow icon goes down when price decrease
+                  }-line`}
+                ></i>
               </span>
             </div>
             <div className="rank">
-              Rank: <span>{market_cap_rank}</span>
+              Rank: #<span>{market_cap_rank}</span>
             </div>
           </div>
           <div className="info-history-1">
@@ -85,22 +95,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_1h_in_currency[
-                    selectedCurrency
-                  ]
-                }
-                %{" "}
-                {/* <i
-                  class={`ri-arrow-${
+                {coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
+                %
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.market_cap_change_percentage_1h_in_currency[
+                      ?.market_cap_change_percentage_1h_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-1">
@@ -114,22 +122,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_24h_in_currency[
-                    selectedCurrency
-                  ]
-                }
+                {coinInfo.market_data?.price_change_percentage_24h_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
                 %
-                {/* <i
-                  class={`ri-arrow-${
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.price_change_percentage_24h_in_currency[
+                      ?.price_change_percentage_24h_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-1">
@@ -143,22 +149,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_7d_in_currency[
-                    selectedCurrency
-                  ]
-                }
+                {coinInfo.market_data?.price_change_percentage_7d_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
                 %
-                {/* <i
-                  class={`ri-arrow-${
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.market_cap_change_percentage_7d_in_currency[
+                      ?.price_change_percentage_7d_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-1">
@@ -172,22 +176,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_14d_in_currency[
-                    selectedCurrency
-                  ]
-                }
-                %{" "}
-                {/* <i
-                  class={`ri-arrow-${
+                {coinInfo.market_data?.price_change_percentage_14d_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
+                %
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.market_cap_change_percentage_14d_in_currency[
+                      ?.price_change_percentage_14d_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-1">
@@ -201,22 +203,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_30d_in_currency[
-                    selectedCurrency
-                  ]
-                }
-                %{" "}
-                {/* <i
-                  class={`ri-arrow-${
+                {coinInfo.market_data?.price_change_percentage_30d_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
+                %
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.market_cap_change_percentage_30d_in_currency[
+                      ?.price_change_percentage_30d_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-1">
@@ -230,42 +230,40 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data?.price_change_percentage_1y_in_currency[
-                    selectedCurrency
-                  ]
-                }
+                {coinInfo.market_data?.price_change_percentage_1y_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
                 %
-                {/* <i
-                  class={`ri-arrow-${
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.price_change_percentage_1y_in_currency[
+                      ?.price_change_percentage_1y_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
           </div>
           <div className="info-history-2">
             <div className="history-2">
-              <div className="period-2">High 24hr</div>
+              <div className="period-2">High 24hr ({currSymbol})</div>
               <div className="val-2">
                 {currSymbol}
-                {coinInfo.market_data?.high_24h[selectedCurrency]}
+                {coinInfo.market_data?.high_24h[selectedCurrency].toFixed(3)}
               </div>
             </div>
             <div className="history-2">
-              <div className="period-2">Low 24hr</div>
+              <div className="period-2">Low 24hr ({currSymbol})</div>
               <div className="val-2">
                 {currSymbol}
-                {coinInfo.market_data?.low_24h[selectedCurrency]}
+                {coinInfo.market_data?.low_24h[selectedCurrency].toFixed(3)}
               </div>
             </div>
             <div className="history-2">
-              <div className="period-2">Market Cap</div>
+              <div className="period-2">Market Cap({currSymbol})</div>
               <div className="val-2">
                 {currSymbol}
                 {coinInfo.market_data?.market_cap[
@@ -285,23 +283,20 @@ export default function CoinInfo() {
                     : "red"
                 }`}
               >
-                {
-                  coinInfo.market_data
-                    ?.market_cap_change_percentage_24h_in_currency[
-                    selectedCurrency
-                  ]
-                }
-                %{" "}
-                {/* <i
-                  class={`ri-arrow-${
+                {coinInfo.market_data?.market_cap_change_percentage_24h_in_currency[
+                  selectedCurrency
+                ].toFixed(3)}
+                %
+                <i
+                  className={`ri-arrow-${
                     coinInfo.market_data
-                      ?.market_cap_change_percentage_24h_in_currency[
+                      ?.market_cap_change_percentage_1h_in_currency?.[
                       selectedCurrency
                     ] > 0
                       ? "up"
                       : "down"
                   }-line`}
-                ></i> */}
+                ></i>
               </div>
             </div>
             <div className="history-2">
