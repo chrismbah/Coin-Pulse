@@ -174,4 +174,9 @@ option:checked{
       transform: rotate(1turn);
    }
 }
-  
+.red{
+  color: red;
+}
+.green{
+color: green;
+}  
