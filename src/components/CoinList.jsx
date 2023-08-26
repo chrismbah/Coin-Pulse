@@ -41,13 +41,12 @@ export default function CoinList() {
       <div className="coin-list">
         <div className="coin-header">
           <div className="coin-no">#</div>
-          <div className="details">
-            <div className="det price">Price ({currSymbol})</div>
-            <div className="det price-change">% 24Hr</div>
-            <div className="det market-cap">Market Cap ({currSymbol})</div>
-            <div className="det market-cap-change">% 24 Hr</div>
-            <div className="det vol">Total Volume ({currSymbol})</div>
-          </div>
+
+          <div className="det price">Price ({currSymbol})</div>
+          <div className="det price-change">% 24Hr</div>
+          <div className="det market-cap">Market Cap ({currSymbol})</div>
+          <div className="det market-cap-change">% 24 Hr</div>
+          <div className="det vol">Total Volume ({currSymbol})</div>
         </div>
         <div>
           {isLoading ? (
