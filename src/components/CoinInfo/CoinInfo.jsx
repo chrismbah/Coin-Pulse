@@ -54,103 +54,271 @@ export default function CoinInfo() {
                   selectedCurrency
                 ].toLocaleString()}
               </h2>
+              <span
+                className={`${
+                  coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                    selectedCurrency
+                  ].toFixed(2) > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
+                {coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                  selectedCurrency
+                ].toFixed(2)}
+                {/* %<i class="ri-arrow-up-line"></i> */}
+              </span>
             </div>
             <div className="rank">
               Rank: <span>{market_cap_rank}</span>
             </div>
           </div>
-          <div className="info-history">
-            <div className="history">
-              <div className="period">1hr Price change</div>
-              <div className="val">
+          <div className="info-history-1">
+            <div className="history-1">
+              <div className="period">1hr</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_1h_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_1h_in_currency[
                     selectedCurrency
                   ]
                 }
-                %
+                %{" "}
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.market_cap_change_percentage_1h_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
-            <div className="history">
-              <div className="period">24hr Price change</div>
-              <div className="val">
+            <div className="history-1">
+              <div className="period">24hr</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_24h_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_24h_in_currency[
                     selectedCurrency
                   ]
                 }
                 %
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.price_change_percentage_24h_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
-            <div className="history">
-              <div className="period">7d Price change</div>
-              <div className="val">
+            <div className="history-1">
+              <div className="period">7d</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_7d_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_7d_in_currency[
                     selectedCurrency
                   ]
                 }
                 %
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.market_cap_change_percentage_7d_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
-            <div className="history">
-              <div className="period">14d Price change</div>
-              <div className="val">
+            <div className="history-1">
+              <div className="period">14d</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_14d_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_14d_in_currency[
                     selectedCurrency
                   ]
                 }
-                %
+                %{" "}
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.market_cap_change_percentage_14d_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
-            <div className="history">
-              <div className="period">30d Price change</div>
-              <div className="val">
+            <div className="history-1">
+              <div className="period">30d</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_30d_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_30d_in_currency[
                     selectedCurrency
                   ]
                 }
-                %
+                %{" "}
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.market_cap_change_percentage_30d_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
-            <div className="history">
-              <div className="period">1yr Price change</div>
-              <div className="val">
+            <div className="history-1">
+              <div className="period">1yr</div>
+              <div
+                className={`val ${
+                  coinInfo.market_data?.price_change_percentage_1y_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
                 {
                   coinInfo.market_data?.price_change_percentage_1y_in_currency[
                     selectedCurrency
                   ]
                 }
                 %
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.price_change_percentage_1y_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
               </div>
             </div>
           </div>
-
-          <div>
-            {currSymbol}
-            {coinInfo.market_data?.high_24h[selectedCurrency]}High 24hr
-          </div>
-          <div>
-            {currSymbol}
-            {coinInfo.market_data?.low_24h[selectedCurrency]} Low 24h
-          </div>
-          <div>
-            {currSymbol}
-            {coinInfo.market_data?.market_cap[selectedCurrency]} Market Cap
-          </div>
-          <div>
-            {
-              coinInfo.market_data?.market_cap_change_24h_in_currency[
-                selectedCurrency
-              ]
-            }
-            Market cap change 24hr
-          </div>
-          <div>
-            {currSymbol}
-            {coinInfo.market_data?.total_volume[selectedCurrency]} Total Volume
+          <div className="info-history-2">
+            <div className="history-2">
+              <div className="period-2">High 24hr</div>
+              <div className="val-2">
+                {currSymbol}
+                {coinInfo.market_data?.high_24h[selectedCurrency]}
+              </div>
+            </div>
+            <div className="history-2">
+              <div className="period-2">Low 24hr</div>
+              <div className="val-2">
+                {currSymbol}
+                {coinInfo.market_data?.low_24h[selectedCurrency]}
+              </div>
+            </div>
+            <div className="history-2">
+              <div className="period-2">Market Cap</div>
+              <div className="val-2">
+                {currSymbol}
+                {coinInfo.market_data?.market_cap[
+                  selectedCurrency
+                ].toLocaleString()}
+              </div>
+            </div>
+            <div className="history-2">
+              <div className="period-2"> Market cap change 24hr</div>
+              <div
+                className={`val-2 ${
+                  coinInfo.market_data
+                    ?.market_cap_change_percentage_24h_in_currency[
+                    selectedCurrency
+                  ] > 0
+                    ? "green"
+                    : "red"
+                }`}
+              >
+                {
+                  coinInfo.market_data
+                    ?.market_cap_change_percentage_24h_in_currency[
+                    selectedCurrency
+                  ]
+                }
+                %{" "}
+                {/* <i
+                  class={`ri-arrow-${
+                    coinInfo.market_data
+                      ?.market_cap_change_percentage_24h_in_currency[
+                      selectedCurrency
+                    ] > 0
+                      ? "up"
+                      : "down"
+                  }-line`}
+                ></i> */}
+              </div>
+            </div>
+            <div className="history-2">
+              <div className="period-2">Total Volume</div>
+              <div className="val-2">
+                {currSymbol}
+                {coinInfo.market_data?.total_volume[
+                  selectedCurrency
+                ].toLocaleString()}
+              </div>
+            </div>
+            <div className="history-2">
+              <div className="period-2">Circulating Supply</div>
+              <div className="val-2">
+                {coinInfo.market_data?.circulating_supply.toLocaleString()}
+              </div>
+            </div>
           </div>
         </div>
       )}
