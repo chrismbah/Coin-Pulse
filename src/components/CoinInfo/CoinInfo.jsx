@@ -244,9 +244,12 @@ export default function CoinInfo() {
                         : "red"
                     }`}
                   >
-                    {coinInfo.market_data?.price_change_percentage_1y_in_currency[
-                      selectedCurrency
-                    ].toFixed(3)}
+                    {
+                      coinInfo.market_data
+                        ?.price_change_percentage_1y_in_currency?.[
+                        selectedCurrency
+                      ]
+                    }
                     %
                     <i
                       className={`ri-arrow-${
