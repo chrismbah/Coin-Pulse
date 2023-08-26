@@ -24,6 +24,10 @@
     font-family: "Bricolage Grotesque",sans-serif;
     
 }
+a{
+  text-decoration: none;
+  
+}
 body{
   color: var(--color-primary-300);
   background-color: var(--color-surface-100);
