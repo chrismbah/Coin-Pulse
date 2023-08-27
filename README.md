@@ -1,6 +1,6 @@
 # CoinView
 
-- CryptoCurrencies Price Tracker
+- CryptoCurrency Price Tracker
 
 ## Overview
 
