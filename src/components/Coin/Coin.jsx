@@ -13,6 +13,7 @@ export default function Coin({ coin, no }) {
     current_price,
     market_cap,
     total_volume,
+    market_cap_rank,
     price_change_percentage_24h,
     market_cap_change_percentage_24h,
   } = coin;
@@ -22,7 +23,7 @@ export default function Coin({ coin, no }) {
       <Link to={`/info/${id}`}>
         <div className="coins">
           <div className="coin-info">
-            <h4>{num}</h4>
+            <h4>{market_cap_rank}</h4>
             <div className="coin-img">
               <img src={image} alt={name} />
             </div>
