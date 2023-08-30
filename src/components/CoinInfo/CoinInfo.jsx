@@ -3,6 +3,8 @@ import Axios from "axios";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CoinApp } from "../../App";
+import Loading from "../Loading";
+import Error from "../Error";
 import "./CoinInfo.css";
 
 export default function CoinInfo() {
@@ -37,11 +39,11 @@ export default function CoinInfo() {
   return (
     <>
       {infoLoading ? (
-        <div class="spinner"></div> //*Loading animation while data fetches
+        <Loading /> //*Loading animation while data fetches
       ) : (
         <>
           {infoError ? (
-            <div className="error">{infoError}</div>
+            <Error msg={infoError} /> //*Error message if data fails to fetch
           ) : (
             <div className="info-body">
               <div className="info-name">

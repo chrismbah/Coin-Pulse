@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Coin from "./Coin/Coin";
 import { useContext } from "react";
 import { CoinApp } from "../App";
+import Loading from "./Loading";
+import Error from "./Error";
 
 export default function CoinList() {
   const {
@@ -50,11 +52,11 @@ export default function CoinList() {
         </div>
         <div>
           {isLoading ? (
-            <div class="spinner"></div>
+           <Loading />
           ) : (
             <>
               {error ? (
-                <div className="error">{error}</div>
+                <Error msg={error} />
               ) : (
                 <>
                   {filteredCoinList.map((coin, index) => {
