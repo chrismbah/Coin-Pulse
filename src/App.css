@@ -226,6 +226,7 @@ color: rgb(20, 150, 20);
   }
 } 
  @media screen and (max-width:630px) {
+
   .info-1 img{
     width:30px;
   }
@@ -240,6 +241,9 @@ color: rgb(20, 150, 20);
   .info-price h2{
     margin-right: 20px;
     font-size: 1.5rem;
+  }
+  .info-price span{
+    font-size: .75rem;
   }
   .rank{
     font-size: .8rem;
@@ -278,7 +282,20 @@ color: rgb(20, 150, 20);
     gap: 10px;
     padding: 25px 8px 20px 8px;
   }
- 
+  .info-history-2{
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+  }
+  .history-1 .val{
+    font-size:.9rem ;
+  }
+  .history-1{
+    gap: 12px;
+    margin-right: 3px;
+    padding-bottom: 7px ;
+  } 
+  .info-history-2{
+    font-size: .9rem;
+  }
 }
 @media screen and (max-width:455px) {
   .info-name h3{
