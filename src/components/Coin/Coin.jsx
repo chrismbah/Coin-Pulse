@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "./Coin.css";
 import { CoinApp } from "../../App";
 
-export default function Coin({ coin, no }) {
-  const [num, setNum] = useState(no + 1);
+export default function Coin({ coin }) {
   const {
     id,
     name,
