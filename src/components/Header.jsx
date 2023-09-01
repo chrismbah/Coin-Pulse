@@ -10,7 +10,7 @@ export default function Header() {
     <div className="header">
       <Link to="/">
         <div className="header-title">
-          <h2>CoinView</h2>
+          <h2>CoinPulse</h2>
           <img src={logo} alt="logo" />
         </div>
       </Link>

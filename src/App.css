@@ -172,8 +172,14 @@ color: rgb(20, 150, 20);
    }
 }
 @media screen and (max-width:930px) {
+  .info-body{
+    width:95% ;
+}
   .vol{
     display: none;
+  } 
+  .info-name h3{
+    font-size: 1.9rem;
   }
   .coins,.coin-header{
     grid-template-columns: 25% 16% 14% 26% 20%;
@@ -204,6 +210,8 @@ color: rgb(20, 150, 20);
   }
   .coins,.coin-header{
     grid-template-columns: 28% 22% 18% 32%;
+  } .info-name h3{
+    font-size: 1.8rem;
   }
   .title{
     font-size: 1.15rem;
@@ -229,6 +237,8 @@ color: rgb(20, 150, 20);
 
   .info-1 img{
     width:30px;
+  }.info-name h3{
+    font-size: 1.7rem;
   }
   .info-1 .symbol{
     font-size: .7rem;
@@ -299,7 +309,7 @@ color: rgb(20, 150, 20);
 }
 @media screen and (max-width:455px) {
   .info-name h3{
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .info-details{
     padding: 3px 5px;
