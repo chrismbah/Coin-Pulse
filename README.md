@@ -50,7 +50,7 @@ API Documentation: [CoinGecko API Documentation](https://www.coingecko.com/en/ap
 
 ## Live Demo
 
-Check out the live demo of the Crypto Price Tracker App: [Live Demo](https://yourusername.github.io/crypto-price-tracker)
+Check out the live demo of the Crypto Price Tracker App: [Live Demo](https://coin-pulse.vercel.app)
 
 ## Contact
 
