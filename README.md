@@ -1,10 +1,10 @@
-# CoinView
+# CoinPulse
 
 - CryptoCurrency Price Tracker
 
 ## Overview
 
-CoinView is a web app that allows users to track the latest prices of cryptocurrencies in various currencies. It makes use of a RESTful API to fetch real-time data and provides an intuitive interface for users to stay updated about the crypto market.
+CoinPulse is a web app that allows users to track the latest prices of cryptocurrencies in various currencies. It makes use of a RESTful API to fetch real-time data and provides an intuitive interface for users to stay updated about the crypto market.
 
 ## Features
 
@@ -26,8 +26,8 @@ _Caption: Cryptocurrency details page with historical price changes._
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/CoinView.git`
-2. Navigate to the project directory: `cd coin-view`
+1. Clone the repository: `git clone https://github.com/yourusername/Coin-Pulse.git`
+2. Navigate to the project directory: `cd Coin-Pulse`
 3. Install dependencies: `npm install`
 
 ## Usage
