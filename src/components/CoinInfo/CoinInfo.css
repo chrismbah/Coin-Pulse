@@ -75,7 +75,9 @@
 
 }
 .info-price span,.history-1 .val{
-    font-family: "JetBrains Mono",sans-serif;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 .history-1{
     width: 100%;
@@ -95,6 +97,7 @@
 }
 .history-1 .val{
     padding-left: 5px;
+   
 }
 .info-history-2{
     display: grid;
