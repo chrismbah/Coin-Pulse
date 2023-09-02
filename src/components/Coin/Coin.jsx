@@ -45,7 +45,7 @@ export default function Coin({ coin }) {
               price_change_percentage_24h < 0 ? "red" : "green"
             }`}
           >
-            {price_change_percentage_24h.toFixed(4)}%
+            {price_change_percentage_24h?.toFixed(4)}%
             <i
               class={`ri-arrow-right-${
                 price_change_percentage_24h > 0 ? "up" : "down"
@@ -61,7 +61,7 @@ export default function Coin({ coin }) {
               market_cap_change_percentage_24h < 0 ? "red" : "green"
             }`}
           >
-            {market_cap_change_percentage_24h.toFixed(4)}%
+            {market_cap_change_percentage_24h?.toFixed(4)}%
             <i
               class={`ri-arrow-right-${
                 market_cap_change_percentage_24h > 0 ? "up" : "down"
