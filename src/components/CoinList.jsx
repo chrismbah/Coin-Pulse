@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { CoinApp } from "../App";
 import Loading from "./Loading";
 import Error from "./Error";
+import NoResults from "./NoResults";
 
 export default function CoinList() {
   const {
@@ -59,9 +60,12 @@ export default function CoinList() {
                 <Error msg={error} />
               ) : (
                 <>
-                  {filteredCoinList.map((coin, index) => {
-                    return <Coin key={coin.id} coin={coin} no={index} />;
-                  })}
+                  {
+                    filteredCoinList.length>1? (filteredCoinList.map((coin, index) => {
+                      return <Coin key={coin.id} coin={coin} no={index} />;
+                    })): <NoResults/>
+                  }
+                 
                 </>
               )}
             </>
