@@ -246,12 +246,9 @@ export default function CoinInfo() {
                         : "red"
                     }`}
                   >
-                    {
-                      coinInfo.market_data
-                        ?.price_change_percentage_1y_in_currency?.[
-                        selectedCurrency
-                      ]
-                    }
+                    {coinInfo.market_data?.price_change_percentage_1y_in_currency?.[
+                      selectedCurrency
+                    ].toFixed(3)}
                     %
                     <i
                       className={`ri-arrow-${
@@ -271,16 +268,18 @@ export default function CoinInfo() {
                   <div className="period-2">High 24hr ({currSymbol})</div>
                   <div className="val-2">
                     {currSymbol}
-                    {coinInfo.market_data?.high_24h[selectedCurrency].toFixed(
-                      3
-                    )}
+                    {coinInfo.market_data?.high_24h[
+                      selectedCurrency
+                    ].toLocaleString()}
                   </div>
                 </div>
                 <div className="history-2">
                   <div className="period-2">Low 24hr ({currSymbol})</div>
                   <div className="val-2">
                     {currSymbol}
-                    {coinInfo.market_data?.low_24h[selectedCurrency].toFixed(3)}
+                    {coinInfo.market_data?.low_24h[
+                      selectedCurrency
+                    ].toLocaleString()}
                   </div>
                 </div>
                 <div className="history-2">
