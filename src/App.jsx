@@ -55,7 +55,7 @@ export default function App() {
       setIsLoading(false);
       console.log(coins.data);
     } catch (error) {
-      setError("Network Error: Please check your internet connection ");
+      setError("Error: Something went wrong :( ");
       setIsLoading(false);
     }
   }
