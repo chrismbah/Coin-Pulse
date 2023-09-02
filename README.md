@@ -26,7 +26,7 @@ _Caption: Cryptocurrency details page with historical price changes._
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/Coin-Pulse.git`
+1. Clone the repository: `git clone https://github.com/chrismbah/Coin-Pulse.git`
 2. Navigate to the project directory: `cd Coin-Pulse`
 3. Install dependencies: `npm install`
 
